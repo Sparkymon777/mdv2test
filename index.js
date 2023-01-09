@@ -77,17 +77,8 @@ async function startSparkyBotMd() {
     })
 
     store.bind(SparkyBotMd.ev)
-    
-    // anticall auto block
-    SparkyBotMd.ws.on('CB:call', async (json) => {
-    const callerId = json.content[0].attrs['call-creator']
-    if (json.content[0].tag == 'offer') {
-    let blockxeon = await SparkyBotMd.sendContact(callerId, global.owner)
-    SparkyBotMd.sendMessage(callerId, { text: `*Automatic blocking system!*\n*Don't call bot*!\n*Please contact the owner to open block !*`}, { quoted : blockxeon })
-    await sleep(8000)
-    await SparkyBotMd.updateBlockStatus(callerId, "block")
-    }
-    })
+
+    //Sparky
 
     SparkyBotMd.ev.on('messages.upsert', async chatUpdate => {
         //console.log(JSON.stringify(chatUpdate, undefined, 2))
@@ -161,7 +152,7 @@ let docs = pickRandom(documents)
 memb = metadata.participants.length
 XeonWlcm = await getBuffer(ppuser)
 XeonLft = await getBuffer(ppuser)
-                if (anu.action == 'add') {
+                if (anu.action == '') {
                 const xeonbuffer = await getBuffer(ppuser)
                 let xeonName = num
                 const xtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
@@ -202,7 +193,7 @@ mediaUrl: `${websitex}`
 }}
 }
 SparkyBotMd.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
-                } else if (anu.action == 'remove') {
+                } else if (anu.action == '') {
                 	const xeonbuffer = await getBuffer(ppuser)
                     const xeontime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
 	                const xeondate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
