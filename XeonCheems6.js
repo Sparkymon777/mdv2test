@@ -7725,8 +7725,6 @@ case 'm': case 'panel': case 'list': case 'menu': case 'help': case '?': {
 ╰─────────────┈⊷`
             let ments = [ownernya, me, ini_mark]        
             let buttons = [{ buttonId: 'owner', buttonText: { displayText: 'Owner' }, type: 1 },{ buttonId: 'command', buttonText: { displayText: 'List Menu' }, type: 1 },{ buttonId: 'sc', buttonText: { displayText: 'Script' }, type: 1 }]
-            let buttonMessage = { 
-showAdAttribution: true
   }
   SparkyBotMd.sendMessage(m.chat, buttonMessage, {quoted: fkontak})
   }
